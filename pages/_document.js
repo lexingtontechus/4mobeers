@@ -1,10 +1,6 @@
 import React from "react";
 import Document, { Html, Head, Main, NextScript } from "next/document";
-
-import Script from "next/script";
-import Navbar from "../components/navbar";
-import Footer from "../components/footermini";
-
+import { CssBaseline } from "@nextui-org/react";
 //import Head from "next/head";
 
 class MyDocument extends Document {
@@ -20,6 +16,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          {CssBaseline.flush()}
           <meta property="og:type" content="website" />
           <meta property="og:url" content="https://4mobeers.nft/" />
           <meta property="og:title" content="4mobeers DAO Inc." />
@@ -30,10 +27,7 @@ class MyDocument extends Document {
           />
 
           <meta property="twitter:card" content="summary_large_image" />
-          <meta
-            property="twitter:url"
-            content="https://twitter.com/4mobeers"
-          />
+          <meta property="twitter:url" content="https://twitter.com/4mobeers" />
           <meta property="twitter:title" content="4mobeers" />
           <meta
             property="twitter:description"
@@ -45,7 +39,7 @@ class MyDocument extends Document {
           />
           <link rel="me" href="https://noc.social/@4mobeers" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
             href="https://fonts.googleapis.com/css2?family=Sora:wght@700&display=swap"
             rel="stylesheet"
@@ -54,7 +48,6 @@ class MyDocument extends Document {
             rel="icon"
             href="https://storageapi.fleek.one/ead18a13-670a-4701-91a7-06a767c3dcd5-bucket/assets/img/logo-4mobeers.svg"
           />
-          
         </Head>
         <body className="lightmode dark:darkmode">
           <Main />

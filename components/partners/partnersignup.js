@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import Link from "next/link";
-import Container from "./container";
+
+import Container from "../container";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useRouter } from "next/router";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowCircleLeft } from "@fortawesome/free-solid-svg-icons";
+import { faDiscord } from "@fortawesome/free-brands-svg-icons";
+import { Button, Link } from "@nextui-org/react";
 
-export default function Test() {
+export default function ParterSignup() {
   const {
     register,
     handleSubmit,
@@ -39,7 +43,16 @@ export default function Test() {
           updated_at: new Date().toISOString(),
         };
 
-        let { error } = await supabase.from("partners").insert(registerPartner);
+        let { error } = await supabase
+          .from("partners")
+          .insert(
+            companyname,
+            email,
+            clientname,
+            contactnumber,
+            website,
+            businesstype
+          );
         if (error) throw error;
         //alert("Whitelist updated!");
       } catch (error) {
@@ -55,40 +68,40 @@ export default function Test() {
     };
 
   return (
-    <div className="container w-10/12 p-8 mx-auto w-full place-content-center flex flex-wrap">
-      <div className="bg-trueBlue-300 dark:bg-trueZinc-900 flex flex-col  overflow-hidden left-0 h-full w-full sm:w-[350px] min-h-[250px] sm:h-[600px] sm:max-h-[calc(100vh-120px)]">
-        <div className="flex-grow h-full p-6 overflow-auto">
+    <div className="mx-auto w-full place-content-center flex flex-wrap">
+      <div className="flex flex-col  overflow-hidden left-0 h-full w-full ">
+        <div className="flex-grow h-full overflow-auto">
           {!isSubmitSuccessful && (
             <form onSubmit={handleSubmit(onSubmit)} noValidate>
-              <div className="mb-4 px-4">
+              <div id="companyname" className="mb-4 px-4">
                 <label
-                  htmlFor="companyName"
+                  htmlFor="companyname"
                   className="block mb-2 text-sm text-truePink-600 dark:text-truePink-400"
                 >
                   Company Name
                 </label>
                 <input
                   type="text"
-                  id="companyName"
+                  id="companyname"
                   placeholder="Greatest Brew Co."
-                  {...register("companyName", {
+                  {...register("companyname", {
                     required: "Company name is required",
                     maxLength: 80,
                   })}
                   className={`w-full px-3 py-2 placeholder-trueZinc-300 bg-trueZinc-100 border border-trueZinc-300 rounded-md focus:outline-none focus:ring   ${
-                    errors.companyName
-                      ? "border-red-600 focus:border-red-600 ring-red-100"
+                    errors.companyname
+                      ? "border-red-600 focus:border-red-600 ring-red-700"
                       : "border-trueZinc-300 focus:border-truePurple-600 ring-truePurple-100"
                   }`}
                 />
-                {errors.companyName && (
+                {errors.companyname && (
                   <div className="mt-1 text-sm text-red-400 invalid-feedback">
-                    {errors.companyName.message}
+                    {errors.companyname.message}
                   </div>
                 )}
               </div>
 
-              <div className="mb-4 px-4">
+              <div id="email" className="mb-4 px-4">
                 <label
                   htmlFor="Email"
                   className="block mb-2 text-sm text-truePink-600 dark:text-truePink-400"
@@ -98,7 +111,7 @@ export default function Test() {
                 <input
                   type="email"
                   id="Email"
-                  {...register("Email", {
+                  {...register("email", {
                     required: "Enter your email",
                     pattern: {
                       value: /^\S+@\S+$/i,
@@ -107,20 +120,20 @@ export default function Test() {
                   })}
                   placeholder="brewbuddy@company.com"
                   className={`w-full px-3 py-2 placeholder-trueZinc-300 bg-trueZinc-100 border border-trueZinc-300 rounded-md focus:outline-none focus:ring   ${
-                    errors.Email
-                      ? "border-red-600 focus:border-red-600 ring-red-100"
+                    errors.email
+                      ? "border-red-600 focus:border-red-600 ring-red-700"
                       : "border-trueZinc-300 focus:border-truePurple-600 ring-truePurple-100"
                   }`}
                 />
 
-                {errors.Email && (
+                {errors.email && (
                   <div className="mt-1 text-sm text-red-400 invalid-feedback">
-                    {errors.Email.message}
+                    {errors.email.message}
                   </div>
                 )}
               </div>
 
-              <div className="mb-4 px-4">
+              <div id="clientname" className="mb-4 px-4">
                 <label
                   htmlFor="clientName"
                   className="block mb-2 text-sm text-truePink-600 dark:text-truePink-400"
@@ -129,57 +142,60 @@ export default function Test() {
                 </label>
                 <input
                   type="text"
-                  id="clientName"
+                  id="clientname"
                   placeholder="Brew Buddy"
-                  {...register("clientName", {
+                  {...register("clientname", {
                     required: "Your full name is required",
                     maxLength: 80,
                   })}
                   className={`w-full px-3 py-2 placeholder-trueZinc-300 bg-trueZinc-100 border border-trueZinc-300 rounded-md focus:outline-none focus:ring   ${
-                    errors.clientName
-                      ? "border-red-600 focus:border-red-600 ring-red-100"
+                    errors.clientname
+                      ? "border-red-600 focus:border-red-600 ring-red-700"
                       : "border-trueZinc-300 focus:border-truePurple-600 ring-truePurple-100"
                   }`}
                 />
-                {errors.clientName && (
+                {errors.clientname && (
                   <div className="mt-1 text-sm text-red-400 invalid-feedback">
-                    {errors.clientName.message}
+                    {errors.clientname.message}
                   </div>
                 )}
               </div>
 
-              <div className="mb-4 px-4">
+              <div id="contactnumber" className="mb-4 px-4">
                 <label
-                  htmlFor="clientName"
+                  htmlFor="contactnumber"
                   className="block mb-2 text-sm text-truePink-600 dark:text-truePink-400"
                 >
                   Contact Number
                 </label>
                 <input
-                  type="text"
-                  id="contactNumber"
+                  type="tel"
+                  id="contactnumber"
                   placeholder="000-000-0000"
-                  {...register("contactNumber", {
+                  {...register("contactnumber", {
                     required:
                       "Please enter your contact number e.g.000-000-0000 ",
-                    maxLength: 80,
+
+                    min: 12,
+                    maxLength: 12,
+                    pattern: /^\S+-\S+-\S/i,
                   })}
                   className={`w-full px-3 py-2 placeholder-trueZinc-300 bg-trueZinc-100 border border-trueZinc-300 rounded-md focus:outline-none focus:ring   ${
-                    errors.contactNumber
-                      ? "border-red-600 focus:border-red-600 ring-red-100"
+                    errors.contactnumber
+                      ? "border-red-600 focus:border-red-600 ring-red-700"
                       : "border-trueZinc-300 focus:border-truePurple-600 ring-truePurple-100"
                   }`}
                 />
-                {errors.contactNumber && (
+                {errors.contactnumber && (
                   <div className="mt-1 text-sm text-red-400 invalid-feedback">
-                    {errors.contactNumber.message}
+                    {errors.contactnumber.message}
                   </div>
                 )}
               </div>
 
-              <div className="mb-4 px-4">
+              <div id="website" className="mb-4 px-4">
                 <label
-                  htmlFor="clientName"
+                  htmlFor="website"
                   className="block mb-2 text-sm text-truePink-600 dark:text-truePink-400"
                 >
                   Website
@@ -187,14 +203,15 @@ export default function Test() {
                 <input
                   type="url"
                   id="website"
-                  placeholder="000-000-0000"
+                  placeholder="greatestbrew.co"
                   {...register("website", {
                     required: "Please enter the company's website URL",
                     maxLength: 80,
+                    pattern: /^\S+.\S/i,
                   })}
                   className={`w-full px-3 py-2 placeholder-trueZinc-300 bg-trueZinc-100 border border-trueZinc-300 rounded-md focus:outline-none focus:ring   ${
                     errors.website
-                      ? "border-red-600 focus:border-red-600 ring-red-100"
+                      ? "border-red-600 focus:border-red-600 ring-red-700"
                       : "border-trueZinc-300 focus:border-truePurple-600 ring-truePurple-100"
                   }`}
                 />
@@ -205,9 +222,9 @@ export default function Test() {
                 )}
               </div>
 
-              <div className="mb-4 px-4">
+              <div id="businesstype" className="mb-4 px-4">
                 <label
-                  htmlFor="clientName"
+                  htmlFor="businesstype"
                   className="block mb-2 text-sm text-truePink-600 dark:text-truePink-400"
                 >
                   Website
@@ -218,14 +235,14 @@ export default function Test() {
                   })}
                   className={`w-full px-3 py-2 placeholder-trueZinc-300 bg-trueZinc-100 border border-trueZinc-300 rounded-md focus:outline-none focus:ring   ${
                     errors.businesstype
-                      ? "border-red-600 focus:border-red-600 ring-red-100"
+                      ? "border-red-600 focus:border-red-600 ring-red-700"
                       : "border-trueZinc-300 focus:border-truePurple-600 ring-truePurple-100"
                   }`}
                 >
                   <option value="default">Select An Option</option>
                   <option value="Bar">Bar</option>
-
                   <option value="Brewery">Brewery</option>
+                                    <option value="Club">Club</option>
                   <option value="Distillery">Distillery</option>
                   <option value="Food Truck">Food Truck</option>
                   <option value="Pub">Pub</option>
@@ -294,25 +311,29 @@ export default function Test() {
                   />
                 </svg>
                 <h3 className="py-5 text-xl text-trueEmerald-500">
-                  Whitelist request sent successfully
+                  Partner request sent successfully!
                 </h3>
-                <h2 className="py-5 text-xl text-trueZinc-700">
-                  <Link
-                    href="https://discord.gg/d6KnD7V2gs"
-                    alt="Discord"
-                    target="_blank"
-                    className="text-trueZinc-700"
-                  >
-                    Join Our Discord Channel
-                  </Link>
+                <h2 className="py-2 text-xl text-trueZinc-700">
+                  Join Our Partners Discord Channel
                 </h2>
 
-                <button
-                  className="rounded-md py-2 px-4 bg-truePurple-900 mt-6 text-trueZinc-100 focus:outline-none"
-                  onClick={() => reset()}
+                <Link
+                  href="https://discord.gg/VpUvAbaenh"
+                  alt="Discord"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-trueZinc-700"
                 >
-                  Go back
-                </button>
+                  <Button
+                    className="uppercase button primary block bg-truePurple-900 rounded-md p-2 w-full text-trueZinc-100 mx-auto w-full"
+                    auto
+                    shadow
+                    css={{ color: "#f4f4f5", background: "#581c87" }}
+                    icon={<FontAwesomeIcon icon={faDiscord} />}
+                  >
+                    Discord
+                  </Button>
+                </Link>
               </div>
             </>
           )}
@@ -335,15 +356,19 @@ export default function Test() {
               </svg>
 
               <h3 className="text-xl text-red-400 py-7">
-                Oops, Something went wrong!
+                Oops, We Spilled Your Drink! PLease Try Again.
               </h3>
 
-              <button
-                className="mt-6 text-truePurple-600 focus:outline-none"
+              <Button
+                className="uppercase button primary block bg-truePurple-900 rounded-md p-2 w-full text-trueZinc-100 mx-auto w-full"
+                auto
+                shadow
+                css={{ color: "#f4f4f5", background: "#581c87" }}
                 onClick={() => reset()}
               >
-                Go back
-              </button>
+                <FontAwesomeIcon icon={faArrowCircleLeft} className="mr-3" />{" "}
+                Back
+              </Button>
             </div>
           )}
         </div>

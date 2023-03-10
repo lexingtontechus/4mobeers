@@ -5,31 +5,51 @@ import React from "react";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import Team from "../components/team";
-import Whitelist from "../components/whitelist";
-import Hero from "../components/hero";
 
-import Cal from "../components/cal";
+import Hero from "../components/hero";
+import Community from "../components/community";
+import Partners from "../components/partner";
+
 import Faq from "../components/faq";
 import PopupWidget from "../components/popupWidget";
+import Cal from "../components/cal";
 
 import stylesteam from "../styles/Team.module.scss";
 
-export default function Layout({ children }) {
+import { getSession } from "next-auth/react";
+import { getToken } from "next-auth/jwt";
+
+export const getServerSideProps = async (context) => {
+  const session = await getSession(context);
+  const token = await getToken({ req: context.req });
+  const address = token?.sub ?? null;
+
+  // If you have a value for "address" here, your
+  // server knows the user is authenticated.
+  // You can then pass any data you want
+  // to the page component here.
+
+  return {
+    props: {
+      address,
+      session,
+    },
+  };
+};
+
+export default function Layout({ children, address, session }) {
   return (
     <>
-      <div className="relative h-full w-full mx-auto px-8">
+      <div className="relative h-full w-full mx-auto px-8 py-4">
         <Navbar />
-        <Hero className="mt-4" />
+        <Hero />
         <div className="relative mb-4">
           <div className="mx-auto w-full">{children}</div>
         </div>
-        
-          <Faq />
-        
-        
-          <Team className="mt-4" />
-        
-
+        <Community />
+        <Partners />
+        <Faq />
+        <Team />
         <Footer />
         <PopupWidget />
         <Cal />
