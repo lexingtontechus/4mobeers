@@ -8,34 +8,28 @@
 Framework built on NextJS https://nextjs.org
 ```
 
-### 2\. NextUI
+### 2\. DaisyUI
 
 ```
-Frontend UI built on NextUI http://nextui.org
+Frontend UI built on DaisyUI http://daisy.com
 ```
 
 ### 3\. Wallet Integration
 
 ```
-WEB3 wallet connect built on Web3Modal, Thirdweb &  RainbowKit
+WEB3 wallet connect
 ```
 
-### 4\. Next-Auth
+### 4\. Clerk WEB3
 
 ```
-Authentication & session management built on NextAuth https://next-auth.js.org/
+Authentication & session management built on Clerk https://clerk.com/
 ```
 
 ### 5\. Supabase
 
 ```
 Backend built on Supabase https://supabase.com
-```
-
-### 5\. Thirdweb
-
-```
-WEB3 contracts built on Thirdweb https://thirdweb.com
 ```
 
 ## Author
