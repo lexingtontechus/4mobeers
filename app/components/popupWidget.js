@@ -58,19 +58,19 @@ export default function PopupWidget() {
       <Disclosure>
         {({ open }) => (
           <>
-            <Disclosure.Button className="ease border-trueFuchsia-700 fixed bottom-5 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full border-2 bg-secondary-700 shadow-lg transition duration-300 hover:bg-accent focus:bg-accent-focus focus:outline-none">
+            <Disclosure.Button className="btn-primary glass btn ease duration fixed bottom-5 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full border-2 border-primary shadow-lg transition">
               <span className="sr-only">Open Contact form Widget</span>
               <Transition
                 show={!open}
                 enter="transition duration-200 transform ease"
                 enterFrom="opacity-0 -rotate-45 scale-75"
-                leave="transition duration-100 transform ease"
+                leave="transition duration transform ease"
                 leaveTo="opacity-0 -rotate-45"
                 className="absolute h-6 w-6"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 text-trueFuchsia-700"
+                  className="h-6 w-6"
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"
@@ -81,16 +81,16 @@ export default function PopupWidget() {
                   strokeLinejoin="round"
                 >
                   <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                </svg>{' '}
+                </svg>
               </Transition>
 
               <Transition
                 show={open}
                 enter="transition duration-200 transform ease"
                 enterFrom="opacity-0 rotate-45 scale-75"
-                leave="transition duration-100 transform ease"
+                leave="transition duration transform ease"
                 leaveTo="opacity-0 rotate-45"
-                className="absolute h-6 w-6 text-secondary-700"
+                className="absolute h-6 w-6"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -116,21 +116,21 @@ export default function PopupWidget() {
               leave="transition duration-200 transform ease"
               leaveTo="opacity-0 translate-y-5"
             >
-              <Disclosure.Panel className="bg-trueZinc-700 dark:trueZinc-500 left-0 flex h-full min-h-[250px] w-full flex-col overflow-hidden rounded-md border border-primary-300 shadow-2xl dark:border-primary-800 sm:h-[600px] sm:max-h-[calc(100vh-120px)] sm:w-[350px]">
-                <div className="flex flex-col items-center justify-center bg-secondary-700 p-5">
+              <Disclosure.Panel className="bg-base-100 left-0 flex h-full min-h-[250px] w-full flex-col overflow-hidden rounded-md border border-secondary shadow-2xl sm:h-[600px] sm:max-h-[calc(100vh-120px)] sm:w-[350px]">
+                <div className="flex flex-col items-center justify-center bg-secondary p-5">
                   <h3 className="text-lg">How can we help?</h3>
                   <Player
                     autoplay
                     loop
                     src="https://storage.fleek-internal.com/ead18a13-670a-4701-91a7-06a767c3dcd5-bucket/assets/lottie/drunkenowl.json"
-                    style={{ height: '150px', width: '150px' }}
+                    style={{ height: '100px', width: '100px' }}
                   ></Player>
 
-                  <p className="opacity-50">
+                  <p className="opacity-75">
                     We usually respond in a few hours
                   </p>
                 </div>
-                <div className="h-full flex-grow overflow-auto bg-primary-50 p-6">
+                <div className="h-full flex-grow overflow-auto p-6">
                   {!isSubmitSuccessful && (
                     <form onSubmit={handleSubmit(onSubmit)} noValidate>
                       <input
@@ -170,24 +170,21 @@ export default function PopupWidget() {
                             required: 'Full name is required',
                             maxLength: 80,
                           })}
-                          className={`w-full rounded-md border border-primary-300 bg-primary-100 px-3 py-2 placeholder-primary-300 focus:outline-none focus:ring   ${
+                          className={`w-full rounded-md border border-secondary bg-primary px-3 py-2 placeholder-primary focus:outline-none focus:ring   ${
                             errors.name
-                              ? 'border-trueRed-600 ring-trueRed-800 focus:border-trueRed-600'
-                              : 'border-primary-300 ring-secondary-100 focus:border-secondary-600'
+                              ? 'border-error ring-error focus:border-error'
+                              : 'border-secondary ring-secondary focus:border-secondary'
                           }`}
                         />
                         {errors.name && (
-                          <div className="invalid-feedback mt-1 text-sm text-trueRed-400">
+                          <div className="invalid-feedback mt-1 text-sm text-error">
                             {errors.name.message}
                           </div>
                         )}
                       </div>
 
                       <div className="mb-4">
-                        <label
-                          htmlFor="email"
-                          className="mb-2 block text-sm"
-                        >
+                        <label htmlFor="email" className="mb-2 block text-sm">
                           Email Address
                         </label>
                         <input
@@ -201,25 +198,22 @@ export default function PopupWidget() {
                             },
                           })}
                           placeholder="beery@mcslurry.xyz"
-                          className={`w-full rounded-md border border-primary-300 bg-primary-100 px-3 py-2 placeholder-primary-300 focus:outline-none focus:ring   ${
+                          className={`w-full rounded-md border border-secondary bg-primary px-3 py-2 placeholder-primary focus:outline-none focus:ring   ${
                             errors.email
-                              ? 'border-trueRed-600 ring-trueRed-800 focus:border-trueRed-600'
-                              : 'border-primary-300 ring-secondary-100 focus:border-secondary-600'
+                              ? 'border-error ring-error focus:border-error'
+                              : 'border-secondary ring-secondary focus:border-secondary'
                           }`}
                         />
 
                         {errors.email && (
-                          <div className="invalid-feedback mt-1 text-sm text-trueRed-400">
+                          <div className="invalid-feedback mt-1 text-sm text-error">
                             {errors.email.message}
                           </div>
                         )}
                       </div>
 
                       <div className="mb-4">
-                        <label
-                          htmlFor="message"
-                          className="mb-2 block text-sm"
-                        >
+                        <label htmlFor="message" className="mb-2 block text-sm">
                           Your Message
                         </label>
 
@@ -230,23 +224,23 @@ export default function PopupWidget() {
                             required: 'Enter your Message',
                           })}
                           placeholder="Your Message"
-                          className={`h-28 w-full rounded-md border border-primary-300 bg-primary-100 px-3 py-2 placeholder-primary-300 focus:outline-none focus:ring   ${
+                          className={`h-28 w-full rounded-md border border-secondary bg-primary px-3 py-2 placeholder-primary focus:outline-none focus:ring   ${
                             errors.message
-                              ? 'border-trueRed-600 ring-trueRed-800 focus:border-trueRed-600'
-                              : 'border-primary-300 ring-secondary-100 focus:border-secondary-600'
+                              ? 'border-error ring-error focus:border-error'
+                              : 'border-secondary ring-secondary focus:border-secondary'
                           }`}
                           required
                         ></textarea>
                         {errors.message && (
-                          <div className="invalid-feedback mt-1 text-sm text-trueRed-400">
+                          <div className="invalid-feedback mt-1 text-sm text-error">
                             {errors.message.message}
                           </div>
                         )}
                       </div>
-                      <div className="mb-3 inline-block w-full rounded-md bg-secondary-700 py-2 text-center">
+                      <div className="mb-2 inline-block w-full rounded-md py-2 text-center">
                         <button
                           type="submit"
-                          className="btn btn-primary glass mt-6 rounded-md p-2 focus:outline-none text-trueZinc-900 dark:text-trueZinc-100"
+                          className="btn-primary glass btn rounded-md p-2 focus:outline-none"
                         >
                           {isSubmitting ? (
                             <svg
@@ -286,7 +280,7 @@ export default function PopupWidget() {
                           src="https://storage.fleek-internal.com/ead18a13-670a-4701-91a7-06a767c3dcd5-bucket/assets/lottie/drunkbeerbottlegreen.json"
                           style={{ height: '100px', width: '100px' }}
                         ></Player>
-                        <h3 className="py-5 text-xl text-green-500">
+                        <h3 className="py-5 text-xl text-success">
                           Message sent successfully
                         </h3>
                         <h2 className="py-5 text-xl">
@@ -299,9 +293,9 @@ export default function PopupWidget() {
                           </Link>
                         </h2>
 
-                        <p className="text-primary-700 md:px-3">{Message}</p>
+                        <p className="md:px-3">{Message}</p>
                         <button
-                          className="btn btn-primary glass mt-6 rounded-md p-2 focus:outline-none text-trueZinc-900 dark:text-trueZinc-100"
+                          className="btn-primary glass btn mt-6 rounded-md p-2 focus:outline-none"
                           onClick={() => reset()}
                         >
                           Go back
@@ -315,17 +309,17 @@ export default function PopupWidget() {
                       <Player
                         autoplay
                         loop
-                        src="https://storage.fleek-internal.com/ead18a13-670a-4701-91a7-06a767c3dcd5-bucket/assets/lottie/drunkbeerbottletrueRed.json"
+                        src="https://storage.fleek-internal.com/ead18a13-670a-4701-91a7-06a767c3dcd5-bucket/assets/lottie/drunkbeerbottleerror.json"
                         style={{ height: '100px', width: '100px' }}
                       ></Player>
 
-                      <h3 className="py-7 text-xl text-trueRed-400">
+                      <h3 className="py-7 text-xl text-error">
                         Oops, Something went wrong!
                       </h3>
-                      <p className="text-primary-700 md:px-3">{Message}</p>
+                      <p className="text-primary md:px-3">{Message}</p>
                       <button
                         auto
-                        className="btn btn-primary glass mt-6 rounded-md bg-secondary-700 p-2 focus:outline-none text-trueZinc-900 dark:text-trueZinc-100"
+                        className="btn-primary glass btn mt-6 rounded-md bg-secondary p-2 focus:outline-none"
                         onClick={() => reset()}
                       >
                         Go back

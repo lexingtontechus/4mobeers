@@ -5,7 +5,7 @@ import PartnerModal from './partners/partnermodal';
 
 const Partner = () => (
   <div id="partners" className="m-8">
-    <h1 className="animate-linear bg-gradient-to-r from-truePurple-500 via-trueAmber-500 to-truePurple-500 bg-[length:200%_auto] bg-clip-text text-center font-black uppercase text-transparent text-5xl">
+    <h1 className="animate-linear bg-gradient-to-r from-purple-500 via-amber-500 to-purple-500 bg-[length:200%_auto] bg-clip-text text-center font-black uppercase text-transparent text-5xl">
       Partners
     </h1>
     <SectionTitle pretitle="Become A Partner" title="Join Our NIL Program">

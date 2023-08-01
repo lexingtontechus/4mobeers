@@ -22,17 +22,8 @@ export default function NotFound({ error, reset }) {
         className="m-8"
       ></Player>
            <div className="mx-auto w-full text-center">
-          <button className="btn-primary glass btn uppercase text-base-content mr-3">
-            <Link href="/"> HOME</Link>
-          </button>
-          <button
-            className="btn-primary glass btn uppercase text-base-content"
-            onPress={
-              // Attempt to recover by trying to re-render the segment
-              () => reset()
-            }
-          >
-            Reset
+          <button className="btn-primary glass btn rounded-md uppercase text-base-content mr-3">
+            <Link href="/">HOME</Link>
           </button>
         </div>
     </div>

@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react';
 import { Player } from '@lottiefiles/react-lottie-player';
+import Link from 'next/link';
 
 export default function Error({ error, reset }) {
   useEffect(() => {
@@ -10,8 +11,10 @@ export default function Error({ error, reset }) {
   }, [error]);
 
   return (
-    <div classsName="relative flex flex-col justify-center overflow-hidden m-8">
-      <h1 className="animate-linear bg-gradient-to-r from-truePurple-500 via-trueSky-500 to-truePink-500 bg-[length:200%_auto] bg-clip-text text-center text-5xl font-black uppercase text-transparent">
+  <div className="hero min-h-screen">
+      <div className="hero-content text-center">
+        <div className="max-w-lg">
+          <h1 className="animate-linear bg-gradient-to-r from-purple-500 via-sky-500 to-pink-500 bg-[length:200%_auto] bg-clip-text text-center text-5xl font-black uppercase text-transparent">
         Order Up!
       </h1>
         <Player
@@ -23,18 +26,11 @@ export default function Error({ error, reset }) {
       ></Player>
             <div className="mx-auto w-full text-center">
           <button className="btn-primary glass btn uppercase text-base-content mr-3">
-            <Link href="/"> HOME</Link>
-          </button>
-          <button
-            className="btn-primary glass btn uppercase text-base-content"
-            onPress={
-              // Attempt to recover by trying to re-render the segment
-              () => reset()
-            }
-          >
-            Reset
+            <Link href="/">HOME</Link>
           </button>
         </div>
+    </div>
+    </div>
     </div>
   );
 }

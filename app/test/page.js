@@ -11,7 +11,7 @@ export default function Test({ error, reset }) {
 
   return (
     <div classsName="relative flex flex-col justify-center overflow-hidden m-8">
-      <h1 className="animate-linear bg-gradient-to-r from-truePurple-500 via-trueSky-500 to-truePink-500 bg-[length:200%_auto] bg-clip-text text-center text-5xl font-black uppercase text-transparent">
+      <h1 className="animate-linear bg-gradient-to-r from-purple-500 via-sky-500 to-pink-500 bg-[length:200%_auto] bg-clip-text text-center text-5xl font-black uppercase text-transparent">
         Someone Spilled Their Drink!
       </h1>
       <Player

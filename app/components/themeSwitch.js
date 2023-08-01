@@ -15,7 +15,7 @@ const ThemeChanger = () => {
     <div className="flex items-center">
       {theme === 'cyberpunk' ? (
         <button
-          className="btn-primary glass btn-circle btn rounded-md fill-trueZinc-900"
+          className="btn-primary glass btn-circle btn rounded-md fill-zinc-900"
           onClick={() => setTheme('dracula')}
         >
           <span className="sr-only">Dark Mode</span>
@@ -23,7 +23,7 @@ const ThemeChanger = () => {
         </button>
       ) : (
         <button
-          className="btn-primary glass btn-circle btn rounded-md fill-trueFuchsia-700"
+          className="btn-primary glass btn-circle btn rounded-md fill-zinc-200"
           onClick={() => setTheme('cyberpunk')}
         >
           <span className="sr-only">Light Mode</span>
@@ -41,7 +41,7 @@ function Beer() {
       viewBox="0 0 100 123.58800478239715"
       width="30"
       height="30"
-      // className="fill-primary dark:fill-accent"
+      //className="fill-primary dark:fill-accent"
     >
       <g transform="translate(0, 0) scale(1.2358800478239715)">
         <path

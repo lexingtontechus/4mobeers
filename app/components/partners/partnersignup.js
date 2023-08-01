@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useSupabaseClient } from '@supabase/auth-helpers-react';
-import Link from "next/link";
+import Link from"next/link";
 import { Player } from '@lottiefiles/react-lottie-player';
 
 export default function ParterSignup() {
@@ -65,14 +65,14 @@ export default function ParterSignup() {
 
   return (
     <div className="mx-auto flex w-full flex-wrap place-content-center rounded-md">
-      <div className="left-0 flex  h-full w-full flex-col overflow-hidden ">
+      <div className="left-0 flex  h-full w-full flex-col overflow-hidden">
         <div className="h-full flex-grow overflow-auto">
           {!isSubmitSuccessful && (
             <form onSubmit={handleSubmit(onSubmit)} noValidate>
               <div id="companyname" className="mb-4 px-4">
                 <label
                   htmlFor="companyname"
-                  className="mb-2 block text-sm text-truePink-600 dark:text-truePink-400"
+                  className="mb-2 block text-sm text-pink-600"
                 >
                   Company Name
                 </label>
@@ -84,14 +84,14 @@ export default function ParterSignup() {
                     required: 'Company name is required',
                     maxLength: 80,
                   })}
-                  className={`w-full rounded-md border border-primary-300 bg-primary-100 px-3 py-2 placeholder-primary-300 focus:outline-none focus:ring   ${
+                  className={`w-full rounded-md border border-secondary bg-primary px-3 py-2 placeholder-secondary focus:outline-none focus:ring   ${
                     errors.companyname
-                      ? 'border-trueRed-600 ring-trueRed-700 focus:border-trueRed-600'
-                      : 'border-primary-300 ring-secondary-100 focus:border-secondary-600'
+                      ? 'border-error ring-error focus:border-error'
+                      : 'border-secondary ring-secondary focus:border-secondary'
                   }`}
                 />
                 {errors.companyname && (
-                  <div className="invalid-feedback mt-1 text-sm text-trueRed-400">
+                  <div className="invalid-feedback mt-1 text-sm text-error">
                     {errors.companyname.message}
                   </div>
                 )}
@@ -100,7 +100,7 @@ export default function ParterSignup() {
               <div id="email" className="mb-4 px-4">
                 <label
                   htmlFor="Email"
-                  className="mb-2 block text-sm text-truePink-600 dark:text-truePink-400"
+                  className="mb-2 block text-sm text-pink-600"
                 >
                   Email Address
                 </label>
@@ -115,15 +115,15 @@ export default function ParterSignup() {
                     },
                   })}
                   placeholder="brewbuddy@company.com"
-                  className={`w-full rounded-md border border-primary-300 bg-primary-100 px-3 py-2 placeholder-primary-300 focus:outline-none focus:ring   ${
+                  className={`w-full rounded-md border border-secondary bg-primary px-3 py-2 placeholder-secondary focus:outline-none focus:ring   ${
                     errors.email
-                      ? 'border-trueRed-600 ring-trueRed-700 focus:border-trueRed-600'
-                      : 'border-primary-300 ring-secondary-100 focus:border-secondary-600'
+                      ? 'border-error ring-error focus:border-error'
+                      : 'border-secondary ring-secondary focus:border-secondary'
                   }`}
                 />
 
                 {errors.email && (
-                  <div className="invalid-feedback mt-1 text-sm text-trueRed-400">
+                  <div className="invalid-feedback mt-1 text-sm text-error">
                     {errors.email.message}
                   </div>
                 )}
@@ -132,7 +132,7 @@ export default function ParterSignup() {
               <div id="clientname" className="mb-4 px-4">
                 <label
                   htmlFor="clientName"
-                  className="mb-2 block text-sm text-truePink-600 dark:text-truePink-400"
+                  className="mb-2 block text-sm text-pink-600"
                 >
                   Your Name
                 </label>
@@ -144,14 +144,14 @@ export default function ParterSignup() {
                     required: 'Your full name is required',
                     maxLength: 80,
                   })}
-                  className={`w-full rounded-md border border-primary-300 bg-primary-100 px-3 py-2 placeholder-primary-300 focus:outline-none focus:ring   ${
+                  className={`w-full rounded-md border border-secondary bg-primary px-3 py-2 placeholder-secondary focus:outline-none focus:ring   ${
                     errors.clientname
-                      ? 'border-trueRed-600 ring-trueRed-700 focus:border-trueRed-600'
-                      : 'border-primary-300 ring-secondary-100 focus:border-secondary-600'
+                      ? 'border-error ring-error focus:border-error'
+                      : 'border-secondary ring-secondary focus:border-secondary'
                   }`}
                 />
                 {errors.clientname && (
-                  <div className="invalid-feedback mt-1 text-sm text-trueRed-400">
+                  <div className="invalid-feedback mt-1 text-sm text-error">
                     {errors.clientname.message}
                   </div>
                 )}
@@ -160,7 +160,7 @@ export default function ParterSignup() {
               <div id="contactnumber" className="mb-4 px-4">
                 <label
                   htmlFor="contactnumber"
-                  className="mb-2 block text-sm text-truePink-600 dark:text-truePink-400"
+                  className="mb-2 block text-sm text-pink-600"
                 >
                   Contact Number
                 </label>
@@ -176,14 +176,14 @@ export default function ParterSignup() {
                     maxLength: 12,
                     pattern: /^\S+-\S+-\S/i,
                   })}
-                  className={`w-full rounded-md border border-primary-300 bg-primary-100 px-3 py-2 placeholder-primary-300 focus:outline-none focus:ring   ${
+                  className={`w-full rounded-md border border-secondary bg-primary px-3 py-2 placeholder-secondary focus:outline-none focus:ring   ${
                     errors.contactnumber
-                      ? 'border-trueRed-600 ring-trueRed-700 focus:border-trueRed-600'
-                      : 'border-primary-300 ring-secondary-100 focus:border-secondary-600'
+                      ? 'border-error ring-error focus:border-error'
+                      : 'border-secondary ring-secondary focus:border-secondary'
                   }`}
                 />
                 {errors.contactnumber && (
-                  <div className="invalid-feedback mt-1 text-sm text-trueRed-400">
+                  <div className="invalid-feedback mt-1 text-sm text-error">
                     {errors.contactnumber.message}
                   </div>
                 )}
@@ -192,7 +192,7 @@ export default function ParterSignup() {
               <div id="website" className="mb-4 px-4">
                 <label
                   htmlFor="website"
-                  className="mb-2 block text-sm text-truePink-600 dark:text-truePink-400"
+                  className="mb-2 block text-sm text-pink-600"
                 >
                   Website
                 </label>
@@ -201,18 +201,18 @@ export default function ParterSignup() {
                   id="website"
                   placeholder="greatestbrew.co"
                   {...register('website', {
-                    required: "Please enter the company's website URL",
+                    required:"Please enter the company's website URL",
                     maxLength: 80,
                     pattern: /^\S+.\S/i,
                   })}
-                  className={`w-full rounded-md border border-primary-300 bg-primary-100 px-3 py-2 placeholder-primary-300 focus:outline-none focus:ring   ${
+                  className={`w-full rounded-md border border-secondary bg-primary px-3 py-2 placeholder-secondary focus:outline-none focus:ring   ${
                     errors.website
-                      ? 'border-trueRed-600 ring-trueRed-700 focus:border-trueRed-600'
-                      : 'border-primary-300 ring-secondary-100 focus:border-secondary-600'
+                      ? 'border-error ring-error focus:border-error'
+                      : 'border-secondary ring-secondary focus:border-secondary'
                   }`}
                 />
                 {errors.website && (
-                  <div className="invalid-feedback mt-1 text-sm text-trueRed-400">
+                  <div className="invalid-feedback mt-1 text-sm text-error">
                     {errors.website.message}
                   </div>
                 )}
@@ -221,7 +221,7 @@ export default function ParterSignup() {
               <div id="businesstype" className="mb-4 px-4">
                 <label
                   htmlFor="businesstype"
-                  className="mb-2 block text-sm text-truePink-600 dark:text-truePink-400"
+                  className="mb-2 block text-sm text-pink-600"
                 >
                   Business Type
                 </label>
@@ -229,10 +229,10 @@ export default function ParterSignup() {
                   {...register('businesstype', {
                     required: 'Please select a type of business',
                   })}
-                  className={`w-full rounded-md border border-primary-300 bg-primary-100 px-3 py-2 placeholder-primary-300 focus:outline-none focus:ring   ${
+                  className={`w-full rounded-md border border-secondary bg-primary px-3 py-2 placeholder-secondary focus:outline-none focus:ring   ${
                     errors.businesstype
-                      ? 'border-trueRed-600 ring-trueRed-700 focus:border-trueRed-600'
-                      : 'border-primary-300 ring-secondary-100 focus:border-secondary-600'
+                      ? 'border-error ring-error focus:border-error'
+                      : 'border-secondary ring-secondary focus:border-secondary'
                   }`}
                 >
                   <option value="default">Select An Option</option>
@@ -249,7 +249,7 @@ export default function ParterSignup() {
                 </select>
 
                 {errors.businesstype && (
-                  <div className="invalid-feedback mt-1 text-sm text-trueRed-400">
+                  <div className="invalid-feedback mt-1 text-sm text-error">
                     {errors.businesstype.message}
                   </div>
                 )}
@@ -291,17 +291,17 @@ export default function ParterSignup() {
 
           {isSubmitSuccessful && isSuccess && (
             <>
-              <div className="flex h-full flex-col items-center justify-center rounded-md text-center text-primary-100">
+              <div className="flex h-full flex-col items-center justify-center rounded-md text-center">
                 <Player
                   autoplay
                   loop
                   src="https://storage.fleek-internal.com/ead18a13-670a-4701-91a7-06a767c3dcd5-bucket/assets/lottie/drunkbeerbottlegreen.json"
                   style={{ height: '100px', width: '100px' }}
                 ></Player>
-                <h3 className="py-5 text-xl text-trueEmerald-500">
+                <h3 className="py-5 text-xl text-success">
                   Partner request sent successfully!
                 </h3>
-                <h2 className="py-2 text-xl text-primary-700">
+                <h2 className="py-2 text-xl">
                   Join Our Partners Discord Channel
                 </h2>
 
@@ -310,7 +310,7 @@ export default function ParterSignup() {
                   alt="Discord"
                   target="_blank"
                   rel="noreferrer"
-                  className="text-primary-700"
+                  className=""
                 >
                   <button
                     className="btn btn-primary rounded-md glass semibold uppercase text-base-content p-2"
@@ -324,7 +324,7 @@ export default function ParterSignup() {
           )}
 
           {isSubmitSuccessful && !isSuccess && (
-            <div className="flex h-full flex-col items-center justify-center rounded-md text-center text-primary-100">
+            <div className="flex h-full flex-col items-center justify-center rounded-md text-center">
               <Player
                 autoplay
                 loop
@@ -332,7 +332,7 @@ export default function ParterSignup() {
                 style={{ height: '100px', width: '100px' }}
               ></Player>
 
-              <h3 className="py-7 text-xl text-trueRed-400">
+              <h3 className="py-7 text-xl text-error">
                 Oops, We Spilled Your Drink! PLease Try Again.
               </h3>
 
