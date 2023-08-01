@@ -25,7 +25,7 @@ export default function Privacy() {
             <div className="mx-auto w-full px-4">
             <div tabIndex={0} className="collapse  collapse-arrow bg-accent text-primary-content focus:bg-secondary focus:text-secondary-content my-2 rounded-md">
               <div className="collapse-title">
-                GENERAL NOTICE
+                1. GENERAL NOTICE
               </div>
               <div className="collapse-content text-xs"> 
                 <p>Thank you for choosing to be part of our community at

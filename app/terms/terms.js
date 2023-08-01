@@ -28,7 +28,7 @@ export default function Terms() {
           made between you, whether personally or on behalf of an
           entity (“you”) and 4MoBeers DAO Inc, doing business as
           4MoBeers (“4MoBeers“, “we”, “us”, or “our”), concerning your
-          access to and use of the <span className="text-primary">http://4mobeers.nft</span> website as well
+          access to and use of this website as well
           as any other media form, media channel, mobile website or
           mobile application related, linked, or otherwise connected
           thereto (collectively, the “Site”). The Site provides an

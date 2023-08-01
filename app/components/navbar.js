@@ -7,46 +7,41 @@ import { SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
 
 //export default function Header() {
 const Navbar = () => (
-  <div className="navbar flex justify-between px-8 whitespace-normal">
-      <div className="flex flex-1 items-start justify-start">     
-        <Link
-            href="/"
-            className="h-content inline-flex w-auto stroke-2"
-          >
-            <Logo />
-          </Link>
-          </div>
-          <div>
-       <div className="justify-end mr-3">
-          <SignedIn>
-            {/* Mount the UserButton component */}
-            <UserButton
-              appearance={{
-                layout: {
-                  shimmer: true,
-                },
-              }}
-              userProfileMode="modal"
-              userProfileUrl="/"
-              afterSignOutUrl="/"
-              afterMultiSessionSingleSignOutUrl="/"
-            />
-          </SignedIn>
-          <SignedOut>
-            <SignInButton
-              mode="modal"
-              afterSignInUrl="/"
-              afterSignUpUrl="/"
-            >
-              <button className="btn btn-primary rounded-md glass semibold uppercase text-base-content"> CONNECT</button>
-            </SignInButton>
-          </SignedOut>
-          </div>
-        </div>
-        <div>
-        <ThemeSwitch />
-        </div>
+  <div className="navbar flex justify-between whitespace-normal px-8">
+    <div className="flex flex-1 items-start justify-start">
+      <Link href="/" className="inline-flex w-auto stroke-2">
+        <Logo />
+      </Link>
+    </div>
+    <div>
+      <div className="mr-3 justify-end">
+        <SignedIn>
+          {/* Mount the UserButton component */}
+          <UserButton
+            appearance={{
+              layout: {
+                shimmer: true,
+              },
+            }}
+            userProfileMode="modal"
+            userProfileUrl="/"
+            afterSignOutUrl="/"
+            afterMultiSessionSingleSignOutUrl="/"
+          />
+        </SignedIn>
+        <SignedOut>
+          <SignInButton mode="modal" afterSignInUrl="/" afterSignUpUrl="/">
+            <button className="btn-primary glass btn rounded-md font-bold uppercase text-base-content">
+              CONNECT
+            </button>
+          </SignInButton>
+        </SignedOut>
       </div>
+    </div>
+    <div>
+      <ThemeSwitch />
+    </div>
+  </div>
 );
 
 export default Navbar;
@@ -59,9 +54,9 @@ function Logo() {
       preserveAspectRatio="xMidYMid meet"
       width="70"
       height="70"
-      className="fill-trueFuchsia-700"
+      className="fill-fuchsia-700"
     >
-    <g
+      <g
         featurekey="rootContainer"
         transform="matrix(2.8938654362463287,0,0,2.8938654362463287,-0.00346661711164234,-0.028938799252233225)"
       >

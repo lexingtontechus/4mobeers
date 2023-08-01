@@ -1,10 +1,9 @@
 'use client';
-import React from 'react';
 import Container from './container';
 
 export default function SectionTitle(props) {
   return (
-    <Container
+    <div
       className={`mt-4 flex w-full flex-col ${
         props.align === 'left' ? '' : 'items-center justify-center text-center'
       }`}
@@ -26,6 +25,6 @@ export default function SectionTitle(props) {
           {props.children}
         </p>
       )}
-    </Container>
+    </div>
   );
 }

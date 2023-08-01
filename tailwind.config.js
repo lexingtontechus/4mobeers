@@ -47,17 +47,17 @@ module.exports = {
         },
       },
       colors: {
-        trueGray: colors.gray,
-        trueAmber: colors.amber,
-        trueOrange: colors.orange,
-        trueSky: colors.sky,
-        trueRed: colors.red,
-        truePurple: colors.purple,
-        trueZinc: colors.zinc,
-        trueEmerald: colors.emerald,
-        trueBlue: colors.blue,
-        truePink: colors.pink,
-        trueFuchsia: colors.fuchsia,
+        gray: colors.gray,
+        amber: colors.amber,
+        orange: colors.orange,
+        sky: colors.sky,
+        red: colors.red,
+        purple: colors.purple,
+        zinc: colors.zinc,
+        emerald: colors.emerald,
+        blue: colors.blue,
+        pink: colors.pink,
+        fuchsia: colors.fuchsia,
       },
     },
     fontFamily: {
@@ -93,7 +93,7 @@ module.exports = {
           'base-100': '#1f2937',
         },
       },
-    ], // true: all themes | false: only light + dark | array: specific themes like this ["light", "dark", "cupcake"]
+    ], // : all themes | false: only light + dark | array: specific themes like this ["light", "dark", "cupcake"]
     darkTheme: 'dracula', // name of one of the included themes for dark mode
     base: true, // applies background color and foreground color for root element by default
     styled: true, // include daisyUI colors and design decisions for all components

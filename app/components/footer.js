@@ -6,7 +6,7 @@ const Footer = () => (
     <div className="mx-auto mt-5 grid max-w-screen-xl grid-cols-1 gap-10 border-t border-secondary-700 pt-2 dark:border-secondary-700">
       <div className="w-full text-center">
         <p className="text-sm">
-          Copyright © {new Date().getFullYear()}.
+          Copyright © {new Date().getFullYear()}
           <span className="px-2">
             <Link
               href="/terms"

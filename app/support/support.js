@@ -54,30 +54,24 @@ export default function Support() {
           <div className="relative mx-auto">
             <div className="flex flex-wrap items-center">
               <div className="mx-auto w-full px-4 text-center">
-                <h1 className="text-5xl font-semibold uppercase text-primary-700 dark:text-primary-100">
-                  Support
-                </h1>
+                <h1 className="text-5xl font-semibold uppercase">Support</h1>
               </div>
             </div>
           </div>
         </div>
-        <div className="mx-auto flex w-10/12 flex-wrap place-content-center">
-          <div className="left-0 flex h-full min-h-[400px] w-full flex-col  overflow-hidden rounded-md border border-primary-300 bg-white shadow-2xl dark:border-primary-800 sm:max-h-[calc(100vh-120px)] lg:w-1/2">
-            <div className="flex flex-col justify-center bg-secondary-600 pb-2">
+        <div className="mx-auto flex  h-full w-10/12 flex-wrap place-content-center">
+          <div className="left-0 flex min-h-[500px] w-full flex-col overflow-hidden rounded-md border border-primary shadow-2xl lg:w-1/2">
+            <div className="flex flex-col justify-center pb-2">
               <Player
                 autoplay
                 loop
                 src="https://storage.fleek-internal.com/ead18a13-670a-4701-91a7-06a767c3dcd5-bucket/assets/lottie/drunkenowl.json"
-                style={{ height: '250px', width: '250px' }}
+                style={{ height: '150px', width: '150px' }}
               ></Player>
-              <h3 className="text-Zinc-100 text-center text-lg">
-                How can we help you?
-              </h3>
-              <p className="text-Zinc-200 text-center">
-                We usually respond in a few hours.
-              </p>
+              <h3 className="text-center text-lg">How can we help you?</h3>
+              <p className="text-center">We usually respond in a few hours.</p>
             </div>
-            <div className="h-full flex-grow overflow-auto bg-primary-50 p-6 ">
+            <div className="flex-grow overflow-auto p-6 ">
               {!isSubmitSuccessful && (
                 <form onSubmit={handleSubmit(onSubmit)} noValidate>
                   <input
@@ -103,10 +97,7 @@ export default function Support() {
                   ></input>
 
                   <div className="mb-4">
-                    <label
-                      htmlFor="full_name"
-                      className="mb-2 block text-sm text-primary-600 dark:text-primary-400"
-                    >
+                    <label htmlFor="full_name" className="mb-2 block text-sm">
                       Full Name
                     </label>
                     <input
@@ -117,10 +108,10 @@ export default function Support() {
                         required: 'Full name is required',
                         maxLength: 80,
                       })}
-                      className={`w-full rounded-md border border-primary-300 bg-white px-3 py-2 placeholder-primary-300 focus:outline-none focus:ring   ${
+                      className={`w-full rounded-md border border-primary px-3 py-2 placeholder-base-200 focus:outline-none focus:ring   ${
                         errors.name
                           ? 'border-red-600 ring-red-100 focus:border-red-600'
-                          : 'border-primary-300 ring-secondary-100 focus:border-secondary-600'
+                          : 'ring-secondary-100 border-primary focus:border-secondary'
                       }`}
                     />
                     {errors.name && (
@@ -131,10 +122,7 @@ export default function Support() {
                   </div>
 
                   <div className="mb-4">
-                    <label
-                      htmlFor="email"
-                      className="mb-2 block text-sm text-primary-600 dark:text-primary-400"
-                    >
+                    <label htmlFor="email" className="mb-2 block text-sm">
                       Email Address
                     </label>
                     <input
@@ -148,10 +136,10 @@ export default function Support() {
                         },
                       })}
                       placeholder="beery@mcslurry.xyz"
-                      className={`w-full rounded-md border border-primary-300 bg-white px-3 py-2 placeholder-primary-300 focus:outline-none focus:ring   ${
+                      className={`w-full rounded-md border border-primary px-3 py-2 placeholder-base-200 focus:outline-none focus:ring   ${
                         errors.email
                           ? 'border-red-600 ring-red-100 focus:border-red-600'
-                          : 'border-primary-300 ring-secondary-100 focus:border-secondary-600'
+                          : 'ring-secondary-100 border-primary focus:border-secondary'
                       }`}
                     />
 
@@ -163,10 +151,7 @@ export default function Support() {
                   </div>
 
                   <div className="mb-4">
-                    <label
-                      htmlFor="message"
-                      className="mb-2 block text-sm text-primary-600 dark:text-primary-400"
-                    >
+                    <label htmlFor="message" className="mb-2 block text-sm">
                       Your Message
                     </label>
 
@@ -177,10 +162,10 @@ export default function Support() {
                         required: 'Enter your Message',
                       })}
                       placeholder="Your Message"
-                      className={`h-28 w-full rounded-md border border-primary-300 bg-white px-3 py-2 placeholder-primary-300 focus:outline-none focus:ring   ${
+                      className={`h-28 w-full rounded-md border border-primary px-3 py-2 placeholder-base-200 focus:outline-none focus:ring   ${
                         errors.message
                           ? 'border-red-600 ring-red-100 focus:border-red-600'
-                          : 'border-primary-300 ring-secondary-100 focus:border-secondary-600'
+                          : 'ring-secondary-100 border-primary focus:border-secondary'
                       }`}
                       required
                     ></textarea>
@@ -190,11 +175,11 @@ export default function Support() {
                       </div>
                     )}
                   </div>
-                  <div className="mb-3 w-full rounded-md bg-secondary-700 px-3 py-4 text-center text-primary-100 hover:bg-truePink-600 hover:outline-none">
+                  <div className="mb-3 w-full rounded-md bg-primary px-3 py-4 text-center hover:bg-pink-600 hover:outline-none">
                     <button className="font-semibold uppercase">
                       {isSubmitting ? (
                         <svg
-                          className="text-Zinc-100 mx-auto h-5 w-5 animate-spin"
+                          className="mx-auto h-5 w-5 animate-spin text-accent"
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
                           viewBox="0 0 24 24"
@@ -223,7 +208,7 @@ export default function Support() {
 
               {isSubmitSuccessful && isSuccess && (
                 <>
-                  <div className="text-Zinc-100 flex h-full flex-col items-center justify-center rounded-md text-center">
+                  <div className="flex h-full flex-col items-center justify-center rounded-md text-center">
                     <svg
                       width="60"
                       height="60"
@@ -241,7 +226,7 @@ export default function Support() {
                     <h3 className="py-5 text-xl text-green-500">
                       Support request sent successfully.
                     </h3>
-                    <h2 className="py-5 text-xl text-primary-700">
+                    <h2 className="text-primary-700 py-5 text-xl">
                       <Link
                         href="https://discord.gg/d6KnD7V2gs"
                         alt="Discord"
@@ -252,17 +237,17 @@ export default function Support() {
                     </h2>
                     <p className="text-primary-700 md:px-3">{Message}</p>
                     <button
-                      className="m-8 mx-auto text-base-content btn btn-primary glass uppercase"
+                      className="btn-primary glass btn m-8 mx-auto uppercase text-base-content"
                       onClick={() => reset()}
                     >
-                        Go back
-                     </button>
+                      Go back
+                    </button>
                   </div>
                 </>
               )}
 
               {isSubmitSuccessful && !isSuccess && (
-                <div className="text-Zinc-100 flex h-full flex-col items-center justify-center rounded-md text-center">
+                <div className="flex h-full flex-col items-center justify-center rounded-md text-center">
                   <svg
                     width="60"
                     height="60"
@@ -283,9 +268,10 @@ export default function Support() {
                   </h3>
                   <p className="text-primary-700 md:px-3">{Message}</p>
                   <button
-                    className="m-8 mx-auto text-base-content btn btn-primary glass uppercase"
+                    className="btn-primary glass btn m-8 mx-auto uppercase text-base-content"
                     onClick={() => reset()}
-                  >Go back
+                  >
+                    Go back
                   </button>
                 </div>
               )}
