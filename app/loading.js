@@ -1,15 +1,7 @@
 'use client';
 
-import { useEffect } from 'react';
 import { Player } from '@lottiefiles/react-lottie-player';
-import Link from 'next/link';
-
-export default function Error({ error, reset }) {
-  useEffect(() => {
-    // Log the error to an error reporting service
-    console.error(error);
-  }, [error]);
-
+export default function Error() {
   return (
   <div className="hero min-h-screen">
       <div className="hero-content text-center">
@@ -24,11 +16,6 @@ export default function Error({ error, reset }) {
         style={{ height: '500px', width: '500px' }}
         className="m-8"
       ></Player>
-            <div className="mx-auto w-full text-center">
-          <button className="btn-primary glass btn uppercase text-base-content mr-3">
-            <Link href="/">HOME</Link>
-          </button>
-        </div>
     </div>
     </div>
     </div>

@@ -25,7 +25,7 @@ export default function Privacy() {
             <div className="mx-auto w-full px-4">
             <div tabIndex={0} className="collapse  collapse-arrow bg-accent text-primary-content focus:bg-secondary focus:text-secondary-content my-2 rounded-md">
               <div className="collapse-title">
-                1. GENERAL NOTICE
+                GENERAL NOTICE
               </div>
               <div className="collapse-content text-xs"> 
                 <p>Thank you for choosing to be part of our community at
@@ -35,7 +35,7 @@ export default function Privacy() {
                                 personal information and your right to privacy. If you have
                                 any questions or concerns about this privacy notice or our
                                 practices with regard to your personal information, please
-                                contact us at delsolventures@skiff.com. This privacy notice
+                                contact us at legal@4mobeers.nft. This privacy notice
                                 describes how we might use your information if you visit our
                                 website: <span><Link href="https://4mobeers.nft">
                                 https://4mobeers.nft
@@ -44,7 +44,7 @@ export default function Privacy() {
             </div>
 <div tabIndex={1} className="collapse  collapse-arrow bg-accent text-primary-content focus:bg-secondary focus:text-secondary-content my-2 rounded-md">
                 <div className="collapse-title">
-                  2. HOW DO WE USE YOUR INFORMATION?
+                  HOW DO WE USE YOUR INFORMATION?
                 </div>
                 <div className="collapse-content text-xs"> 
                   <p>In Short: We process your information for purposes based on
@@ -59,7 +59,7 @@ export default function Privacy() {
                     obligations. We indicate the specific processing grounds we
                     rely on next to each purpose listed below. We use the
                     information we collect or receive:</p>
-                      <ol className="list-inside list-decimal pl-4 text-sm">
+                      <ol className="list-inside list-decimal pl-4 text-xs py-2">
                     <li>
                       Fulfill and manage your orders. We may use your
                       information to fulfill and manage your orders, payments,
@@ -105,7 +105,7 @@ export default function Privacy() {
               </div>
 <div tabIndex={2} className="collapse  collapse-arrow bg-accent text-primary-content focus:bg-secondary focus:text-secondary-content my-2 rounded-md">
                 <div className="collapse-title">
-                 3. WILL YOUR INFORMATION BE SHARED WITH ANYONE?
+                 WILL YOUR INFORMATION BE SHARED WITH ANYONE?
                 </div>
                 <div className="collapse-content text-xs"> 
                   <p>  In Short: We only share information with your consent, to
@@ -142,7 +142,7 @@ export default function Privacy() {
               </div>
            <div tabIndex={3} className="collapse  collapse-arrow bg-accent text-primary-content focus:bg-secondary focus:text-secondary-content my-2 rounded-md">
                 <div className="collapse-title">
-                  4. DO WE USE COOKIES AND OTHER TRACKING TECHNOLOGIES?
+                  DO WE USE COOKIES AND OTHER TRACKING TECHNOLOGIES?
                 </div>
                 <div className="collapse-content text-xs"> 
                   <p>  In Short: We may use cookies and other tracking technologies
@@ -155,7 +155,7 @@ export default function Privacy() {
               </div>   
                       <div tabIndex={4} className="collapse  collapse-arrow bg-accent text-primary-content focus:bg-secondary focus:text-secondary-content my-2 rounded-md">
                 <div className="collapse-title">
-                  5. HOW LONG DO WE KEEP YOUR INFORMATION?
+                  HOW LONG DO WE KEEP YOUR INFORMATION?
                 </div>
                 <div className="collapse-content text-xs"> 
                   <p>  In Short: We keep your information for as long as necessary
@@ -179,7 +179,7 @@ export default function Privacy() {
               
  <div tabIndex={5} className="collapse  collapse-arrow bg-accent text-primary-content focus:bg-secondary focus:text-secondary-content my-2 rounded-md">
                 <div className="collapse-title">
-                  6. HOW DO WE KEEP YOUR INFORMATION SAFE?
+                  HOW DO WE KEEP YOUR INFORMATION SAFE?
                 </div>
                 <div className="collapse-content text-xs"> 
                   <p>In Short: We aim to protect your personal information
@@ -203,7 +203,7 @@ export default function Privacy() {
                
                 <div tabIndex={6} className="collapse  collapse-arrow bg-accent text-primary-content focus:bg-secondary focus:text-secondary-content my-2 rounded-md">
                 <div className="collapse-title">
-                  7. DO WE COLLECT INFORMATION FROM MINORS?
+                  DO WE COLLECT INFORMATION FROM MINORS?
                 </div>
                 <div className="collapse-content text-xs"> 
                   <p>In Short: We do not knowingly collect data from or market
@@ -218,13 +218,13 @@ export default function Privacy() {
                       to promptly delete such data from our records. If you
                       become aware of any data we may have collected from
                       children under age 18, please contact us at
-                      legal@4MoBeers.nft.</p>
+                      legal@4mobeers.nft</p>
                 </div>
               </div>       
 
     <div tabIndex={7} className="collapse  collapse-arrow bg-accent text-primary-content focus:bg-secondary focus:text-secondary-content my-2 rounded-md">
                 <div className="collapse-title">
-                  8. WHAT ARE YOUR PRIVACY RIGHTS?
+                  WHAT ARE YOUR PRIVACY RIGHTS?
                 </div>
                 <div className="collapse-content text-xs"> 
                   <p>In Short: You may review, change, or terminate your
@@ -265,7 +265,7 @@ export default function Privacy() {
               </div>       
            <div tabIndex={9} className="collapse  collapse-arrow bg-accent text-primary-content focus:bg-secondary focus:text-secondary-content my-2 rounded-md">
                 <div className="collapse-title">
-                  9. DO CALIFORNIA RESIDENTS HAVE SPECIFIC PRIVACY RIGHTS?
+                  DO CALIFORNIA RESIDENTS HAVE SPECIFIC PRIVACY RIGHTS?
                 </div>
                 <div className="collapse-content text-xs"> 
                   <p> In Short: Yes, if you are a resident of California, you are
@@ -292,8 +292,8 @@ export default function Privacy() {
                     please be aware that the data may not be completely or
                     comprehensively removed from all our systems (e.g. backups,
                     etc.).</p>
-                <h3>CCPA Privacy Notice</h3>
-                  <p>
+                <h3 className="font-bold py-2">CCPA Privacy Notice</h3>
+                  <p className="pb-2">
                     The California Code of Regulations defines a
                     &quot;resident&quot; as: (1) every individual who is in the
                     State of California for other than a temporary or transitory
@@ -308,7 +308,7 @@ export default function Privacy() {
                     personal information in the past twelve (12) months:
                   </p>
                   <PrivacyCCPA />
-                  <p>
+                  <p className="pt-2">
                     We may also collect other personal information outside of
                     these categories instances where you interact with us
                     in-person, online, or by phone or mail in the context of:
@@ -318,7 +318,7 @@ export default function Privacy() {
                     to your inquiries. How do we use and share your personal
                     information? More information about our data collection and
                     sharing practices can be found in this privacy notice. You
-                    may contact us by email at legal@4MoBeers.nft, by visiting
+                    may contact us by email at legal@4mobeers.nft, by visiting
                     <span>
                       <Link
                     href="https://4mobeers.nft/support"
@@ -408,7 +408,7 @@ export default function Privacy() {
                     upon the request as soon as feasibly possible, but no later
                     than 15 days from the date of the request submission. To
                     exercise these rights, you can contact us by email at
-                    legal@4MoBeers.nft, by visiting
+                    legal@4mobeers.nft, by visiting
                     <span>
                     <Link
                     href="https://4mobeers.nft/support"
@@ -427,7 +427,7 @@ export default function Privacy() {
               
               <div tabIndex={10} className="collapse  collapse-arrow bg-accent text-primary-content focus:bg-secondary focus:text-secondary-content my-2 rounded-md">
                 <div className="collapse-title">
-                 11. DO WE MAKE UPDATES TO THIS NOTICE?
+                 DO WE MAKE UPDATES TO THIS NOTICE?
                 </div>
                 <div className="collapse-content text-xs"> 
                   <p>In Short: Yes, we will update this notice as necessary to
@@ -446,12 +446,12 @@ export default function Privacy() {
               
               <div tabIndex={11} className="collapse  collapse-arrow bg-accent text-primary-content focus:bg-secondary focus:text-secondary-content my-2 rounded-md">
                 <div className="collapse-title">
-                  12. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?
+                  HOW CAN YOU CONTACT US ABOUT THIS NOTICE?
                 </div>
                 <div className="collapse-content text-xs"> 
                   <p>
                     If you have questions or comments about this notice, you may
-                    email us at legal@4MoBeers.nft or by post to:
+                    email us at legal@4mobeers.nft or by post to:
                   </p>
                   <p>
                     4MoBeers DAO Inc.
@@ -466,7 +466,7 @@ export default function Privacy() {
               </div>
               <div tabIndex={12} className="collapse  collapse-arrow bg-accent text-primary-content focus:bg-secondary focus:text-secondary-content my-2 rounded-md">
                 <div className="collapse-title">
-                  13. HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU? 
+                  HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU? 
                 </div>
                 <div className="collapse-content text-xs"> 
                    <p>
@@ -475,10 +475,10 @@ export default function Privacy() {
                     collect from you, change that information, or delete it in
                     some circumstances. To request to review, update, or delete
                     your personal information, please submit a request by
-                    clicking here for our:{' '}
-                    <Link  href="/contact">
-                      Contact Form.
-                    </Link>
+                    clicking here for our:
+                    <span><Link  href="/contact" className="font-bold">
+                      {" "}Contact Form.
+                    </Link></span>
                   </p>
                 </div>
               </div>

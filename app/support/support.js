@@ -49,8 +49,8 @@ export default function Support() {
   };
   return (
     <>
-      <div className="h-full w-full">
-        <div className="min-h-screen-75 relative flex content-center items-center justify-center py-8">
+      <div className="h-full mb-8">
+        <div className="min-h-75 relative flex content-center items-center justify-center py-8">
           <div className="relative mx-auto">
             <div className="flex flex-wrap items-center">
               <div className="mx-auto w-full px-4 text-center">
@@ -59,9 +59,9 @@ export default function Support() {
             </div>
           </div>
         </div>
-        <div className="mx-auto flex  h-full w-10/12 flex-wrap place-content-center">
+        <div className="mx-auto flex min-h-screen w-10/12 flex-wrap place-content-center">
           <div className="left-0 flex min-h-[500px] w-full flex-col overflow-hidden rounded-md border border-primary shadow-2xl lg:w-1/2">
-            <div className="flex flex-col justify-center pb-2">
+            <div className="flex flex-col justify-center mb-8">
               <Player
                 autoplay
                 loop
@@ -71,7 +71,7 @@ export default function Support() {
               <h3 className="text-center text-lg">How can we help you?</h3>
               <p className="text-center">We usually respond in a few hours.</p>
             </div>
-            <div className="flex-grow overflow-auto p-6 ">
+            <div className="flex-grow overflow-auto px-4 py-2">
               {!isSubmitSuccessful && (
                 <form onSubmit={handleSubmit(onSubmit)} noValidate>
                   <input
@@ -175,7 +175,7 @@ export default function Support() {
                       </div>
                     )}
                   </div>
-                  <div className="mb-3 w-full rounded-md bg-primary px-3 py-4 text-center hover:bg-pink-600 hover:outline-none">
+                  <div className="my-2 w-full rounded-md bg-primary px-3 py-4 text-center hover:bg-pink-600 hover:outline-none">
                     <button className="font-semibold uppercase">
                       {isSubmitting ? (
                         <svg
